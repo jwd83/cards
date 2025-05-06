@@ -31,6 +31,8 @@ Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss u
 
 * The land of monsters
 
+* combo point class - combo points = # of cards played this turn. example: 3 energy : evisercate = 4 + 3 * combo points 
+
 
 ## Taking a Turn
 
