@@ -8,7 +8,7 @@
 
 # Story
 
-## Pre-story
+## Prologue
 
 After their mother, a young adult caller/eidolon mother () is defeated by two adventurous knights on order of a local corrupted king she calls out to her father titan who shows up, sends her through a portal to the land of monsters and sunders the earth from her town through the castle tens of miles a way in an earth quake that shakes the bedrock of the planet and reforms the land where the prior castle had been in an epic cataclysm leaving new mountains behind with almost no creature surviving that eye-witnessed the event.
 
