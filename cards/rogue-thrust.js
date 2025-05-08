@@ -1,0 +1,3 @@
+class RogueThrust extends Card {
+    
+}
