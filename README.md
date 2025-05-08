@@ -23,6 +23,26 @@ Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss u
 ## Game Mechanics
 
 * Classes? Archetypes?
+  * Tanks
+    * Titan (Earth)
+    * Alexander (Holy)
+    * Zodiark (Dark)
+    * Leviathan (Water)
+  * Healers
+    * Asura
+    * Carbuncle
+    * Phoenix
+  * Mages
+    * Ifrit (Fire)
+    * Shiva (Ice/Water)
+    * Bahamut (Arcane)
+    * Ramuh (Lightning)
+  * Melee DPS
+    * Odin
+    * Yojimbo
+    * Fenrir
+    * Gilgamesh
+
 * Deck Building
   * Deck size
     * Minimum size 10 cards
