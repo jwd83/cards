@@ -26,10 +26,13 @@
 
         const config = {
             type: Phaser.AUTO,
-            width: 800,
-            height: 600,
+            width: 1280,
+            height: 720,
             loader: {
                 baseURL: 'assets/'
+            },
+            scale: {
+                mode: Phaser.Scale.FIT,
             },
             physics: {
                 default: 'arcade',
