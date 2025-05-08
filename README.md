@@ -32,6 +32,7 @@ Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss u
     * Asura
     * Carbuncle
     * Phoenix
+    * Sylph/Siren/Faerie?
   * Mages
     * Ifrit (Fire)
     * Shiva (Ice/Water)
