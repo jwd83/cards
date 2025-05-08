@@ -21,6 +21,58 @@
 
 <body>
     <script>
+        class TitleScene extends Phaser.Scene {
+            constructor() {
+                super('TitleScene');
+            }
+
+            preload() {
+                this.load.image('button', 'https://labs.phaser.io/assets/sprites/button-blue.png');
+            }
+
+            create() {
+                this.add.text(400, 200, 'The Land of Monsters', {
+                    fontSize: '32px',
+                    fill: '#fff'
+                }).setOrigin(0.5);
+
+                const startButton = this.add.image(400, 350, 'button').setInteractive();
+                startButton.setScale(2);
+
+                this.add.text(400, 350, 'Start Game', {
+                    fontSize: '20px',
+                    fill: '#000'
+                }).setOrigin(0.5);
+
+                startButton.on('pointerdown', () => {
+                    this.scene.start('GameModeScene');
+                });
+
+                startButton.on('pointerover', () => {
+                    startButton.setTint(0xcccccc);
+                });
+
+                startButton.on('pointerout', () => {
+                    startButton.clearTint();
+                });
+            }
+        }
+
+        class GameModeScene extends Phaser.Scene {
+            constructor() {
+                super('GameModeScene');
+            }
+
+            create() {
+                this.add.text(400, 200, 'Choose Game Mode', {
+                    fontSize: '32px',
+                    fill: '#fff'
+                }).setOrigin(0.5);
+
+                // Add game mode options here
+            }
+        }
+
         const config = {
             type: Phaser.AUTO,
             width: 800,
@@ -28,34 +80,14 @@
             physics: {
                 default: 'arcade',
                 arcade: {
-                    gravity: { y: 300 },
+                    gravity: { y: 0 },
                     debug: false
                 }
             },
-            scene: {
-                preload: preload,
-                create: create,
-                update: update
-            }
+            scene: [TitleScene, GameModeScene]
         };
 
         const game = new Phaser.Game(config);
-
-        function preload() {
-            // Load game assets here
-        }
-
-        function create() {
-            // Create game objects here
-            this.add.text(400, 300, 'The Land of Monsters', {
-                fontSize: '32px',
-                fill: '#fff'
-            }).setOrigin(0.5);
-        }
-
-        function update() {
-            // Game loop here
-        }
     </script>
 </body>
 
