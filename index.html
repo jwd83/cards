@@ -27,7 +27,7 @@
             }
 
             preload() {
-                this.load.image('button', 'https://labs.phaser.io/assets/sprites/button-blue.png');
+                this.load.image('button', 'images/button-small.png');
             }
 
             create() {
@@ -77,6 +77,9 @@
             type: Phaser.AUTO,
             width: 800,
             height: 600,
+            loader: {
+                baseURL: 'assets/'
+            },
             physics: {
                 default: 'arcade',
                 arcade: {
