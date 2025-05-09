@@ -6,6 +6,7 @@ class Title extends Phaser.Scene {
     preload() {
         this.load.image('title', 'images/title.png');
         this.load.image('button', 'images/button-small.png');
+        this.load.audio('shuffle', 'audio/cards-shuffling-87543.mp3'); // free sound community
     }
 
     update() {
@@ -41,6 +42,9 @@ class Title extends Phaser.Scene {
         }).setOrigin(0.5);
 
         startButton.on('pointerdown', () => {
+
+            let sfx = this.sound.add('shuffle');
+            sfx.play();
             this.scene.start('MainMenu');
         });
 
