@@ -1,6 +1,6 @@
-class GameModeScene extends Phaser.Scene {
+class MainMenu extends Phaser.Scene {
     constructor() {
-        super('GameModeScene');
+        super('MainMenu');
     }
 
     create() {
@@ -13,4 +13,4 @@ class GameModeScene extends Phaser.Scene {
     }
 }
 
-export default GameModeScene;
+export default MainMenu;

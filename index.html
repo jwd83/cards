@@ -21,8 +21,8 @@
 
 <body>
     <script type="module">
-        import TitleScene from './scenes/TitleScene.js';
-        import GameModeScene from './scenes/GameModeScene.js';
+        import Title from './scenes/Title.js';
+        import MainMenu from './scenes/MainMenu.js';
 
         const config = {
             type: Phaser.AUTO,
@@ -41,7 +41,7 @@
                     debug: false
                 }
             },
-            scene: [TitleScene, GameModeScene]
+            scene: [Title, MainMenu]
         };
 
         const game = new Phaser.Game(config);

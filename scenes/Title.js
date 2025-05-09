@@ -1,6 +1,6 @@
-class TitleScene extends Phaser.Scene {
+class Title extends Phaser.Scene {
     constructor() {
-        super('TitleScene');
+        super('Title');
     }
 
     preload() {
@@ -33,7 +33,7 @@ class TitleScene extends Phaser.Scene {
         }).setOrigin(0.5);
 
         startButton.on('pointerdown', () => {
-            this.scene.start('GameModeScene');
+            this.scene.start('MainMenu');
         });
 
         startButton.on('pointerover', () => {
@@ -46,4 +46,4 @@ class TitleScene extends Phaser.Scene {
     }
 }
 
-export default TitleScene;
+export default Title;
