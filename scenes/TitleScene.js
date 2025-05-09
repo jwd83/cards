@@ -14,9 +14,12 @@ class TitleScene extends Phaser.Scene {
         titleImage.setOrigin(0, 0);
         titleImage.setScale(0.75);
 
-        this.add.text(400, 200, 'The Land of Monsters', {
+        this.add.text(400, 100, 'The Land of Monsters', {
             fontSize: '32px',
-            fill: '#fff'
+            fill: '#fff',
+            stroke: '#000',
+            strokeThickness: 6,
+
         }).setOrigin(0.5);
 
         const startButton = this.add.image(400, 350, 'button').setInteractive();
@@ -24,7 +27,9 @@ class TitleScene extends Phaser.Scene {
 
         this.add.text(400, 350, 'Start Game', {
             fontSize: '20px',
-            fill: '#000'
+            fill: '#000',
+            stroke: '#fff',
+            strokeThickness: 6,
         }).setOrigin(0.5);
 
         startButton.on('pointerdown', () => {
