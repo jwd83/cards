@@ -1,6 +1,6 @@
-class DraftScene extends Phaser.Scene {
+class Draft extends Phaser.Scene {
     constructor() {
-        super('DraftScene');
+        super('Draft');
     }
 
     create() {
@@ -13,4 +13,4 @@ class DraftScene extends Phaser.Scene {
     }
 }
 
-export default DraftScene;
+export default Draft;
