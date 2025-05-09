@@ -31,13 +31,12 @@ class Title extends Phaser.Scene {
 
         }).setOrigin(0.5);
 
-        const btnToggleFullscreen = this.add.image(1280 - 50, 50, 'button').setInteractive();
-        btnToggleFullscreen.setScale(0.5);
-        this.add.text(1280 - 50, 50, 'Fullscreen', {
+        const btnToggleFullscreen = this.add.image(1280 - 100, 50, 'button').setInteractive();
+        btnToggleFullscreen.setScale(0.85);
+        this.add.text(1280 - 100, 50, 'Fullscreen', {
             fontSize: '20px',
             fill: '#000',
-            stroke: '#fff',
-            strokeThickness: 6,
+
         }).setOrigin(0.5);
         btnToggleFullscreen.on('pointerdown', () => {
             if (this.scale.isFullscreen) {
