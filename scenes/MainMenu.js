@@ -9,7 +9,6 @@ class MainMenu extends Phaser.Scene {
             fill: '#fff'
         }).setOrigin(0.5);
 
-        // Add game mode options here
     }
 }
 
