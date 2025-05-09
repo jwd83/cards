@@ -4,7 +4,7 @@ class MainMenu extends Phaser.Scene {
     }
 
     create() {
-        this.add.text(1280 / 2, 720 / 2, 'Choose Game Mode', {
+        this.add.text(1920 / 2, 1080 / 2, 'Choose Game Mode', {
             fontSize: '64px',
             fill: '#fff'
         }).setOrigin(0.5);

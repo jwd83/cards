@@ -20,20 +20,23 @@ class Title extends Phaser.Scene {
 
         const titleImage = this.add.image(0, 0, 'title');
         titleImage.setOrigin(0, 0);
-        titleImage.setScale(0.75);
+        titleImage.setScale(1.1);
 
         this.titleTick = 0;
-        this.titleText = this.add.text(1280 / 2, 720 / 6, 'The Land of Monsters', {
-            fontSize: '64px',
-            fill: '#fffa',
+        this.titleText = this.add.text(1920 / 2, 1080 / 6, 'Card Game', {
+            // fontFamily: 'Arial',
+            // fontSize: '96px',
+            // fontWeight: '900',
+            font: '900 96px Arial',
+            fill: '#fff',
             stroke: '#000',
-            strokeThickness: 6,
+            strokeThickness: 12,
 
         }).setOrigin(0.5);
 
-        const btnToggleFullscreen = this.add.image(1280 - 100, 50, 'button').setInteractive();
+        const btnToggleFullscreen = this.add.image(1920 - 100, 50, 'button').setInteractive();
         btnToggleFullscreen.setScale(0.85);
-        this.add.text(1280 - 100, 50, 'Fullscreen', {
+        this.add.text(1920 - 100, 50, 'Fullscreen', {
             fontSize: '20px',
             fill: '#000',
 
