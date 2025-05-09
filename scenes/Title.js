@@ -24,9 +24,7 @@ class Title extends Phaser.Scene {
 
         this.titleTick = 0;
         this.titleText = this.add.text(1920 / 2, 1080 / 6, 'Card Game', {
-            // fontFamily: 'Arial',
-            // fontSize: '96px',
-            // fontWeight: '900',
+
             font: '900 96px Arial',
             fill: '#fff',
             stroke: '#000',
