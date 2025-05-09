@@ -8,15 +8,23 @@ class Title extends Phaser.Scene {
         this.load.image('button', 'images/button-small.png');
     }
 
+    update() {
+
+        this.titleTick += 0.05;
+        this.titleText.setScale(1 + Math.sin(this.titleTick) / 20);
+
+    }
+
     create() {
 
         const titleImage = this.add.image(0, 0, 'title');
         titleImage.setOrigin(0, 0);
         titleImage.setScale(0.75);
 
-        this.add.text(400, 100, 'The Land of Monsters', {
-            fontSize: '32px',
-            fill: '#fff',
+        this.titleTick = 0;
+        this.titleText = this.add.text(1280 / 2, 720 / 6, 'The Land of Monsters', {
+            fontSize: '64px',
+            fill: '#fffa',
             stroke: '#000',
             strokeThickness: 6,
 
