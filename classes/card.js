@@ -16,5 +16,6 @@ class Card {
             image: this.image,
         };
     }
-
 }
+
+export default Card;
