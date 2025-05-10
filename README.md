@@ -57,8 +57,7 @@ Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss u
 
 * combo point class - combo points = # of cards played this turn. example: 3 energy : evisercate = 4 + 3 * combo points
 
-
-* the caller can capture/tame monsters to use in their deck on future fights. capture is a skill that can be used in combat. 
+* the caller can capture/tame monsters to use in their deck on future fights. capture is a skill that can be used in combat.
 
 ### Taking a Turn
 
