@@ -1,55 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Land of Monsters</title>
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.88.2/dist/phaser.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-    </style>
-  </head>
 
-  <body>
-    <script type="module">
-      import Title from "./scenes/Title.js";
-      import MainMenu from "./scenes/MainMenu.js";
-      import Draft from "./scenes/Draft.js";
-      import GamepadTester from "./scenes/GamepadTester.js";
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Land of Monsters</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.88.2/dist/phaser.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      const config = {
-        type: Phaser.AUTO,
-        width: 1920,
-        height: 1080,
-        loader: {
-          baseURL: "assets/",
-        },
-        input: {
-          gamepad: true,
-        },
-        scale: {
-          mode: Phaser.Scale.FIT,
-        },
-        physics: {
-          default: "arcade",
-          arcade: {
-            gravity: { y: 0 },
-            debug: false,
-          },
-        },
-        scene: [Title, GamepadTester, MainMenu, Draft],
-      };
+<body>
+  <script type="module" src="app.js"></script>
+</body>
 
-      const game = new Phaser.Game(config);
-      game.pad = null;
-    </script>
-  </body>
 </html>
