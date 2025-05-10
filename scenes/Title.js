@@ -14,9 +14,12 @@ class Title extends Phaser.Scene {
         this.titleTick += 0.05;
         this.titleText.setScale(1 + Math.sin(this.titleTick) / 20);
 
+
     }
 
     create() {
+
+        this.game.title_loaded = true;
 
         const titleImage = this.add.image(0, 0, 'title');
         titleImage.setOrigin(0, 0);
@@ -61,7 +64,7 @@ class Title extends Phaser.Scene {
 
             let sfx = this.sound.add('shuffle');
             sfx.play();
-            this.scene.start('MainMenu');
+            this.scene.start('GamepadTester');
         });
 
         startButton.on('pointerover', () => {

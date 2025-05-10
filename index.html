@@ -23,6 +23,7 @@
       import Title from "./scenes/Title.js";
       import MainMenu from "./scenes/MainMenu.js";
       import Draft from "./scenes/Draft.js";
+      import GamepadTester from "./scenes/GamepadTester.js";
 
       const config = {
         type: Phaser.AUTO,
@@ -30,6 +31,9 @@
         height: 1080,
         loader: {
           baseURL: "assets/",
+        },
+        input: {
+          gamepad: true,
         },
         scale: {
           mode: Phaser.Scale.FIT,
@@ -41,10 +45,11 @@
             debug: false,
           },
         },
-        scene: [Title, MainMenu, Draft],
+        scene: [Title, GamepadTester, MainMenu, Draft],
       };
 
       const game = new Phaser.Game(config);
+      game.pad = null;
     </script>
   </body>
 </html>
