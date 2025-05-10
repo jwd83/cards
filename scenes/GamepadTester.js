@@ -111,6 +111,19 @@ class GamepadTester extends Phaser.Scene {
             report2.push('R1 not pressed');
         }
 
+        if (pad.L2) {
+            report2.push('L2 pressed (' + pad.L2.toFixed(3) + ')');
+        } else {
+            report2.push('L2 not pressed');
+        }
+
+        if (pad.R2) {
+            report2.push('R2 pressed (' + pad.R2.toFixed(3) + ')');
+        } else {
+            report2.push('R2 not pressed');
+        }
+
+
         this.gamepadText.setText(report);
         this.gamepadText2.setText(report2);
     }
