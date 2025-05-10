@@ -1,17 +1,18 @@
 class Card {
-    constructor(name, type, description, image) {
+    constructor(name, rarity, cost, description, image) {
         this.name = name;
-        this.type = type;
+        this.rarity = rarity;
+        this.cost = cost;
         this.description = description;
         this.image = image;
     }
 
     getCardInfo() {
         return {
-        name: this.name,
-        type: this.type,
-        description: this.description,
-        image: this.image,
+            name: this.name,
+            rarity: this.rarity,
+            description: this.description,
+            image: this.image,
         };
     }
 
