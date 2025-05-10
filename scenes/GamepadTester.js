@@ -10,23 +10,32 @@ class GamepadTester extends Phaser.Scene {
             fill: '#fff'
         }).setOrigin(0.5);
 
-        this.gamepadText = this.add.text(1920 / 6, 1080 / 10 * 2, 'No gamepad detected', {
+        this.gamepadText = this.add.text(1920 / 10, 1080 / 10 * 2, 'No gamepad detected', {
             fontSize: '32px',
             fill: '#fff'
         }).setOrigin(0);
+
+        this.gamepadText2 = this.add.text(1920 / 10 * 6, 1080 / 10 * 2, '--', {
+            fontSize: '32px',
+            fill: '#fff'
+        }).setOrigin(0);
+
     }
 
 
     update() {
         if (this.input.gamepad.total === 0) {
             this.gamepadText.setText('No gamepad detected');
+            this.gamepadText2.setText('--');
             return;
         }
 
         const pad = this.input.gamepad.getPad(0);
         var report = [];
+        var report2 = [];
 
         report.push('Gamepad ' + pad.index + ': ' + pad.id);
+        report2.push('');
         if (pad.axes.length) {
 
             for (var i = 0; i < pad.axes.length; i++) {
@@ -43,30 +52,67 @@ class GamepadTester extends Phaser.Scene {
 
 
         if (pad.up) {
-            report.push('Up pressed');
+            report2.push('Up pressed');
         } else {
-            report.push('Up not pressed');
+            report2.push('Up not pressed');
         }
 
         if (pad.down) {
-            report.push('Down pressed');
+            report2.push('Down pressed');
         } else {
-            report.push('Down not pressed');
+            report2.push('Down not pressed');
         }
 
         if (pad.left) {
-            report.push('Left pressed');
+            report2.push('Left pressed');
         } else {
-            report.push('Left not pressed');
+            report2.push('Left not pressed');
         }
 
         if (pad.right) {
-            report.push('Right pressed');
+            report2.push('Right pressed');
         } else {
-            report.push('Right not pressed');
+            report2.push('Right not pressed');
+        }
+
+        if (pad.A) {
+            report2.push('A pressed');
+        } else {
+            report2.push('A not pressed');
+        }
+
+        if (pad.B) {
+            report2.push('B pressed');
+        } else {
+            report2.push('B not pressed');
+        }
+
+        if (pad.X) {
+            report2.push('X pressed');
+        } else {
+            report2.push('X not pressed');
+        }
+
+        if (pad.Y) {
+            report2.push('Y pressed');
+        } else {
+            report2.push('Y not pressed');
+        }
+
+        if (pad.L1) {
+            report2.push('L1 pressed');
+        } else {
+            report2.push('L1 not pressed');
+        }
+
+        if (pad.R1) {
+            report2.push('R1 pressed');
+        } else {
+            report2.push('R1 not pressed');
         }
 
         this.gamepadText.setText(report);
+        this.gamepadText2.setText(report2);
     }
 
 
