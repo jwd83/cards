@@ -11,7 +11,7 @@ class GamepadTester extends Phaser.Scene {
         }).setOrigin(0.5);
 
         this.gamepadText = this.add.text(1920 / 2, 1080 / 10 * 4, 'No gamepad detected', {
-            fontSize: '18px',
+            fontSize: '32px',
             fill: '#fff'
         }).setOrigin(0.5);
 
@@ -28,19 +28,24 @@ class GamepadTester extends Phaser.Scene {
         }
 
         const pad = this.input.gamepad.getPad(0);
+        var report = [];
 
+        report.push('Gamepad ' + pad.index + ': ' + pad.id);
         if (pad.axes.length)
         {
-            const axisH = pad.axes[0].getValue();
-            const axisV = pad.axes[1].getValue();
+
+            var i = 0;
+
+            while (i < pad.axes.length)
+            {
+                const axis = pad.axes[i].getValue();
+                report.push('Axis ' + i + ': ' + axis.toFixed(3));
+                i++;
+            }
 
 
-            this.gamepadText.setText([
-                'Gamepad detected',
-                'Axis H: ' + axisH.toFixed(2),
-                'Axis V: ' + axisV.toFixed(2)
-            ]);
         }
+        this.gamepadText.setText(report);
     }
 
 
