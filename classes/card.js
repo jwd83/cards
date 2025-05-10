@@ -11,6 +11,7 @@ class Card {
         return {
             name: this.name,
             rarity: this.rarity,
+            cost: this.cost,
             description: this.description,
             image: this.image,
         };
