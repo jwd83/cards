@@ -27,4 +27,8 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+game.events.on("ready", () => {
+    console.log("Game is ready!");
+}
+);
 game.pad = null;
