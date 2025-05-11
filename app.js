@@ -2,6 +2,7 @@ import Title from "./scenes/Title.js";
 import MainMenu from "./scenes/MainMenu.js";
 import Draft from "./scenes/Draft.js";
 import GamepadTester from "./scenes/GamepadTester.js";
+import Keypad from "./classes/keypad.js";
 
 const config = {
     type: Phaser.AUTO,
@@ -27,7 +28,7 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-
+game.k = new Keypad(game);
 game._frame_count = 0;
 
 game.events.on("ready", () => {
@@ -36,6 +37,10 @@ game.events.on("ready", () => {
 
 game.events.on("step", () => {
     game._frame_count++;
+    game.k.update();
+    if (game.k.h.up) {
+        console.log("up help");
+    }
 
 });
 

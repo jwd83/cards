@@ -17,7 +17,7 @@ duration (how long the key has been held down)
 
 */
 
-keyboard_map = {
+const keyboard_map = {
     'up': 'W',
     'down': 'S',
     'left': 'A',
@@ -55,16 +55,72 @@ function empty_keypad() {
 }
 
 class Keypad {
+    #last_held = null;
+
     constructor(game) {
-        this._game = game;
+        this.game = game;
+        this.#last_held = empty_keypad();
+        this.h = empty_keypad();
         this.p = empty_keypad();
         this.r = empty_keypad();
-        this.h = empty_keypad();
         this.d = empty_keypad();
     }
 
+    update() {
+        /*
+
+        clear the held state and rebuild it from scratch each update.
+
+        once created we can use it to check the pressed and released state
+        of each key.
+
+        on a press record the time pressed for the duration reading
+
+        */
+
+        this.h = empty_keypad();
+
+        // update held based on gamepad
+
+        this.#update_held_from_gamepad();
+
+        // update held based on keyboard input
+        this.#update_held_from_keyboard();
+
+        // overwrite #last_held with h
+        this.#last_held = this.h;
+    }
+
+    #update_held_from_keyboard() {
+
+    }
+
+    #update_held_from_gamepad() {
+        // exit if no gamepad is connected
+        if (this.game.input.gamepad.total === 0) return;
+
+        // connect to the gamepad
+        const pad = this.input.gamepad.getPad(0);
+
+        this.h.up = pad.up;
+        this.h.down = pad.down;
+        this.h.left = pad.left;
+        this.h.right = pad.right;
+        this.h.A = pad.A;
+        this.h.B = pad.B;
+        this.h.X = pad.X;
+        this.h.Y = pad.Y;
+        this.h.L1 = pad.L1;
+        this.h.R1 = pad.R1;
+        this.h.L2 = pad.L2;
+        this.h.R2 = pad.R2;
+        this.h.x0 = pad.axes[0].getValue();
+        this.h.y0 = pad.axes[1].getValue();
+        this.h.x1 = pad.axes[2].getValue();
+        this.h.y1 = pad.axes[3].getValue();
 
 
+    }
 }
 
 export default Keypad;
