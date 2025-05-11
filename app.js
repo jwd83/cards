@@ -36,9 +36,7 @@ game.events.on("ready", () => {
 
 game.events.on("step", () => {
     game._frame_count++;
-    if (game._frame_count % 60 === 0) {
-        console.log("event:game:step", game._frame_count);
-    }
+
 });
 
 
