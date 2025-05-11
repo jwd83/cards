@@ -160,6 +160,16 @@ class Keypad {
         // connect to the gamepad
         const pad = this.input.gamepad.getPad(0);
 
+        if (!pad) {
+            console.warn('No gamepad connected');
+            return;
+        }
+
+
+        if (!pad.up) {
+            console.warn('no pad up');
+            return;
+        }
         this.h.up = pad.up;
         this.h.down = pad.down;
         this.h.left = pad.left;
