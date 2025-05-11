@@ -148,8 +148,8 @@ class Keypad {
         this.h.Y |= this.#key_map.Y.isDown;
         this.h.L1 |= this.#key_map.L1.isDown;
         this.h.R1 |= this.#key_map.R1.isDown;
-        this.h.L2 |= this.#key_map.L2.isDown ? 1.0 : 0.0;
-        this.h.R2 |= this.#key_map.R2.isDown ? 1.0 : 0.0;
+        this.h.L2 = this.#key_map.L2.isDown ? 1.0 : this.h.L2;
+        this.h.R2 = this.#key_map.R2.isDown ? 1.0 : this.h.R2;
 
     }
 
