@@ -16,6 +16,17 @@ class Title extends Phaser.Scene {
         this.titleTick += 0.05;
         this.titleText.setScale(1 + Math.sin(this.titleTick) / 20);
 
+        if (this.k.p.up) console.log('pressed:up');
+        if (this.k.p.down) console.log('pressed:down');
+        if (this.k.p.left) console.log('pressed:left');
+        if (this.k.p.right) console.log('pressed:right');
+
+        if (this.k.r.up) console.log('released:up');
+        if (this.k.r.down) console.log('released:down');
+        if (this.k.r.left) console.log('released:left');
+        if (this.k.r.right) console.log('released:right');
+
+        
 
     }
 
