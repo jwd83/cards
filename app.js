@@ -2,7 +2,6 @@ import Title from "./scenes/Title.js";
 import MainMenu from "./scenes/MainMenu.js";
 import Draft from "./scenes/Draft.js";
 import GamepadTester from "./scenes/GamepadTester.js";
-import Keypad from "./classes/keypad.js";
 
 const config = {
     type: Phaser.AUTO,

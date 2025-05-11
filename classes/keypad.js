@@ -157,19 +157,11 @@ class Keypad {
         // exit if no gamepad is connected
         if (this.input.gamepad.total === 0) return;
 
-        // connect to the gamepad
-        const pad = this.input.gamepad.getPad(0);
+        console.log(`gamepad total: ${this.input.gamepad.total}`);
 
-        if (!pad) {
-            console.warn('No gamepad connected');
-            return;
-        }
+        // connect to the most recent gamepad?
+        const pad = this.input.gamepad.getPad(this.input.gamepad.total - 1);
 
-
-        if (!pad.up) {
-            console.warn('no pad up');
-            return;
-        }
         this.h.up = pad.up;
         this.h.down = pad.down;
         this.h.left = pad.left;
