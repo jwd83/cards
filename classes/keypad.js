@@ -42,8 +42,8 @@ function empty_keypad() {
         Y: false,
         L1: false,
         R1: false,
-        L2: false,
-        R2: false,
+        L2: 0.0,
+        R2: 0.0,
         x0: 0.0,
         y0: 0.0,
         x1: 0.0,
@@ -56,15 +56,34 @@ class Keypad {
     #scene;
     #last_held;
     #control_map;
+    #key_map;
     constructor(scene, control_scheme = {}) {
         this.#scene = scene;
         this.input = scene.input;
         this.control_scheme = control_scheme;
+        this.#key_map = {
+            up: this.input.keyboard.addKey(keyboard_map.up),
+            down: this.input.keyboard.addKey(keyboard_map.down),
+            left: this.input.keyboard.addKey(keyboard_map.left),
+            right: this.input.keyboard.addKey(keyboard_map.right),
+            A: this.input.keyboard.addKey(keyboard_map.A),
+            B: this.input.keyboard.addKey(keyboard_map.B),
+            X: this.input.keyboard.addKey(keyboard_map.X),
+            Y: this.input.keyboard.addKey(keyboard_map.Y),
+            L1: this.input.keyboard.addKey(keyboard_map.L1),
+            R1: this.input.keyboard.addKey(keyboard_map.R1),
+            L2: this.input.keyboard.addKey(keyboard_map.L2),
+            R2: this.input.keyboard.addKey(keyboard_map.R2),
+        }
         this.#last_held = empty_keypad();
-        this.h = empty_keypad();
-        this.p = empty_keypad();
-        this.r = empty_keypad();
-        this.d = empty_keypad();
+        this.h = empty_keypad(); // held state
+        this.p = empty_keypad(); // pressed state
+        this.r = empty_keypad(); // released state
+        this.d = empty_keypad(); // duration state
+        for (const key in this.d) {
+            this.d[key] = 0;
+        }
+
         this.#scene.game.events.on("step", () => {
             this.update();
         });
@@ -91,12 +110,46 @@ class Keypad {
         // update held based on keyboard input
         this.#update_held_from_keyboard();
 
+        // update pressed and released state using the held state and the last held state
+        for (const key in this.h) {
+            // if the key is held and was not held last frame, it was pressed
+            if (this.h[key] && !this.#last_held[key]) {
+                this.p[key] = true;
+                this.d[key] = 0;
+            } else {
+                this.p[key] = false;
+            }
+
+            // if the key is not held and was held last frame, it was released
+            if (!this.h[key] && this.#last_held[key]) {
+                this.r[key] = true;
+            } else {
+                this.r[key] = false;
+            }
+
+            // if the key is held, increment the duration
+            if (this.h[key]) {
+                this.d[key]++;
+            }
+        }
+
         // overwrite #last_held with h
         this.#last_held = this.h;
     }
 
     #update_held_from_keyboard() {
-
+        this.h.up = this.#key_map.up.isDown;
+        this.h.down = this.#key_map.down.isDown;
+        this.h.left = this.#key_map.left.isDown;
+        this.h.right = this.#key_map.right.isDown;
+        this.h.A = this.#key_map.A.isDown;
+        this.h.B = this.#key_map.B.isDown;
+        this.h.X = this.#key_map.X.isDown;
+        this.h.Y = this.#key_map.Y.isDown;
+        this.h.L1 = this.#key_map.L1.isDown;
+        this.h.R1 = this.#key_map.R1.isDown;
+        this.h.L2 = this.#key_map.L2.isDown ? 1.0 : 0.0;
+        this.h.R2 = this.#key_map.R2.isDown ? 1.0 : 0.0;
 
     }
 
