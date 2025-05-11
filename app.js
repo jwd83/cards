@@ -27,8 +27,19 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+
+game._frame_count = 0;
+
 game.events.on("ready", () => {
-    console.log("Game is ready!");
-}
-);
+    console.log("event:game:ready");
+});
+
+game.events.on("step", () => {
+    game._frame_count++;
+    if (game._frame_count % 60 === 0) {
+        console.log("event:game:step", game._frame_count);
+    }
+});
+
+
 game.pad = null;
