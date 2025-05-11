@@ -138,18 +138,18 @@ class Keypad {
     }
 
     #update_held_from_keyboard() {
-        this.h.up = this.#key_map.up.isDown;
-        this.h.down = this.#key_map.down.isDown;
-        this.h.left = this.#key_map.left.isDown;
-        this.h.right = this.#key_map.right.isDown;
-        this.h.A = this.#key_map.A.isDown;
-        this.h.B = this.#key_map.B.isDown;
-        this.h.X = this.#key_map.X.isDown;
-        this.h.Y = this.#key_map.Y.isDown;
-        this.h.L1 = this.#key_map.L1.isDown;
-        this.h.R1 = this.#key_map.R1.isDown;
-        this.h.L2 = this.#key_map.L2.isDown ? 1.0 : 0.0;
-        this.h.R2 = this.#key_map.R2.isDown ? 1.0 : 0.0;
+        this.h.up |= this.#key_map.up.isDown;
+        this.h.down |= this.#key_map.down.isDown;
+        this.h.left |= this.#key_map.left.isDown;
+        this.h.right |= this.#key_map.right.isDown;
+        this.h.A |= this.#key_map.A.isDown;
+        this.h.B |= this.#key_map.B.isDown;
+        this.h.X |= this.#key_map.X.isDown;
+        this.h.Y |= this.#key_map.Y.isDown;
+        this.h.L1 |= this.#key_map.L1.isDown;
+        this.h.R1 |= this.#key_map.R1.isDown;
+        this.h.L2 |= this.#key_map.L2.isDown ? 1.0 : 0.0;
+        this.h.R2 |= this.#key_map.R2.isDown ? 1.0 : 0.0;
 
     }
 
