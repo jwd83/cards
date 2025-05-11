@@ -1,3 +1,5 @@
+import Keypad from "../classes/keypad.js";
+
 class Title extends Phaser.Scene {
     constructor() {
         super('Title');
@@ -19,7 +21,7 @@ class Title extends Phaser.Scene {
 
     create() {
 
-        this.game.title_loaded = true;
+        this.k = new Keypad(this);
 
         const titleImage = this.add.image(0, 0, 'title');
         titleImage.setOrigin(0, 0);

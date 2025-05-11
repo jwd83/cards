@@ -6,14 +6,12 @@ single unified input system.
 It has a pressed and held state for each key/button, and it can be used to
 check if a key/button has just been pressed or is being held.
 
-
 Methods to query:
 
 held (key is being held down)
 pressed (key was just pressed this sample)
 released (key was just released this sample)
 duration (how long the key has been held down)
-
 
 */
 
@@ -55,15 +53,21 @@ function empty_keypad() {
 }
 
 class Keypad {
-    #last_held = null;
-
-    constructor(game) {
-        this.game = game;
+    #scene;
+    #last_held;
+    #control_map;
+    constructor(scene, control_scheme = {}) {
+        this.#scene = scene;
+        this.input = scene.input;
+        this.control_scheme = control_scheme;
         this.#last_held = empty_keypad();
         this.h = empty_keypad();
         this.p = empty_keypad();
         this.r = empty_keypad();
         this.d = empty_keypad();
+        this.#scene.game.events.on("step", () => {
+            this.update();
+        });
     }
 
     update() {
@@ -93,11 +97,14 @@ class Keypad {
 
     #update_held_from_keyboard() {
 
+
     }
 
     #update_held_from_gamepad() {
         // exit if no gamepad is connected
-        if (this.game.input.gamepad.total === 0) return;
+        if (this.input.gamepad.total === 0) return;
+
+        console.log("gamepad connected");
 
         // connect to the gamepad
         const pad = this.input.gamepad.getPad(0);
@@ -118,8 +125,6 @@ class Keypad {
         this.h.y0 = pad.axes[1].getValue();
         this.h.x1 = pad.axes[2].getValue();
         this.h.y1 = pad.axes[3].getValue();
-
-
     }
 }
 

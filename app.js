@@ -28,7 +28,6 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
-game.k = new Keypad(game);
 game._frame_count = 0;
 
 game.events.on("ready", () => {
@@ -37,12 +36,4 @@ game.events.on("ready", () => {
 
 game.events.on("step", () => {
     game._frame_count++;
-    game.k.update();
-    if (game.k.h.up) {
-        console.log("up help");
-    }
-
 });
-
-
-game.pad = null;
