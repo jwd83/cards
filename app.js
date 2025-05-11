@@ -1,7 +1,7 @@
-import Title from "./scenes/Title.js";
-import MainMenu from "./scenes/MainMenu.js";
-import Draft from "./scenes/Draft.js";
-import GamepadTester from "./scenes/GamepadTester.js";
+import Title from "./scenes/title.js";
+import MainMenu from "./scenes/mainmenu.js";
+import Draft from "./scenes/draft.js";
+import GamepadTester from "./scenes/gamepadtester.js";
 
 const config = {
     type: Phaser.AUTO,
