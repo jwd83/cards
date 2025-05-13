@@ -14,7 +14,7 @@ class Title extends Phaser.Scene {
         titleImage.setScale(1.1);
 
         this.titleTick = 0;
-        this.titleText = this.add.text(1920 / 2, 1080 / 6, 'Card Game', {
+        this.titleText = this.add.text(1920 / 2, 1080 / 6, 'Main Menu', {
 
             font: '900 96px Arial',
             fill: '#fff',
@@ -38,29 +38,53 @@ class Title extends Phaser.Scene {
             }
         });
 
-        const startButton = this.add.image(400, 350, 'button').setInteractive();
-        startButton.setScale(1);
 
-        this.add.text(400, 350, 'Start Game', {
+        const btnShuffleSfx = this.add.image(400, 250, 'button').setInteractive();
+        btnShuffleSfx.setScale(1);
+        this.add.text(400, 250, 'Shuffle SFX', {
             fontSize: '20px',
             fill: '#000',
             stroke: '#fff',
             strokeThickness: 6,
         }).setOrigin(0.5);
 
-        startButton.on('pointerdown', () => {
-
+        btnShuffleSfx.on('pointerdown', () => {
             let sfx = this.sound.add('shuffle');
             sfx.play();
+        });
+        btnShuffleSfx.on('pointerover', () => {
+            btnShuffleSfx.setTint(0xcccccc);
+        });
+
+        btnShuffleSfx.on('pointerout', () => {
+            btnShuffleSfx.clearTint();
+        });
+
+
+
+        const btnGamepadTester = this.add.image(400, 350, 'button').setInteractive();
+        btnGamepadTester.setScale(1);
+
+        this.add.text(400, 350, 'Gamepad Test', {
+            fontSize: '20px',
+            fill: '#000',
+            stroke: '#fff',
+            strokeThickness: 6,
+        }).setOrigin(0.5);
+
+        btnGamepadTester.on('pointerdown', () => {
+
+            // let sfx = this.sound.add('shuffle');
+            // sfx.play();
             this.scene.start('GamepadTester');
         });
 
-        startButton.on('pointerover', () => {
-            startButton.setTint(0xcccccc);
+        btnGamepadTester.on('pointerover', () => {
+            btnGamepadTester.setTint(0xcccccc);
         });
 
-        startButton.on('pointerout', () => {
-            startButton.clearTint();
+        btnGamepadTester.on('pointerout', () => {
+            btnGamepadTester.clearTint();
         });
     }
 
