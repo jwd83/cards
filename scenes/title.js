@@ -38,6 +38,24 @@ class Title extends Phaser.Scene {
             }
         });
 
+        const btnMemory = this.add.image(400, 150, 'button').setInteractive();
+        btnMemory.setScale(1);
+        this.add.text(400, 150, 'Memory Game', {
+            fontSize: '20px',
+            fill: '#000',
+            stroke: '#fff',
+            strokeThickness: 6,
+        }).setOrigin(0.5);
+        btnMemory.on('pointerdown', () => {
+            this.scene.start('Memory');
+        });
+        btnMemory.on('pointerover', () => {
+            btnMemory.setTint(0xcccccc);
+        }
+        );
+        btnMemory.on('pointerout', () => {
+            btnMemory.clearTint();
+        });
 
         const btnShuffleSfx = this.add.image(400, 250, 'button').setInteractive();
         btnShuffleSfx.setScale(1);

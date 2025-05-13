@@ -2,6 +2,7 @@ import Title from "./scenes/title.js";
 import MainMenu from "./scenes/mainmenu.js";
 import Draft from "./scenes/draft.js";
 import GamepadTester from "./scenes/gamepadtester.js";
+import Memory from "./scenes/memory.js";
 
 const config = {
     type: Phaser.AUTO,
@@ -23,7 +24,7 @@ const config = {
             debug: false,
         },
     },
-    scene: [Title, GamepadTester, MainMenu, Draft],
+    scene: [Title, GamepadTester, MainMenu, Draft, Memory],
 };
 
 const game = new Phaser.Game(config);

@@ -1,6 +1,6 @@
-export default class MemoryScene extends Phaser.Scene {
+export default class Memory extends Phaser.Scene {
     constructor() {
-        super('MemoryScene');
+        super('Memory');
     }
 
     preload() {
