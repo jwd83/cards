@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Land of Monsters</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.88.2/dist/phaser.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Indie Flower";
+        src: url("assets/fonts/Indie_Flower/IndieFlower-Regular.ttf")
+          format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Land of Monsters</title>
-  <script src="https://cdn.jsdelivr.net/npm/phaser@3.88.2/dist/phaser.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
+      @font-face {
+        font-family: "Rock Salt";
+        src: url("assets/fonts/Rock_Salt/RockSalt-Regular.ttf")
+          format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
+      /* assets\fonts\Rock_Salt\RockSalt-Regular.ttf */
+    </style>
 
-<body>
-  <script type="module" src="app.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <div
+      style="
+        font-family: Indie Flower;
+        position: absolute;
+        left: -1000px;
+        visibility: hidden;
+      "
+    >
+      .
+    </div>
+    <div
+      style="
+        font-family: Rock Salt;
+        position: absolute;
+        left: -1000px;
+        visibility: hidden;
+      "
+    >
+      .
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
 </html>

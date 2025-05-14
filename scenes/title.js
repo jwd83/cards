@@ -15,8 +15,9 @@ class Title extends Phaser.Scene {
 
         this.titleTick = 0;
         this.titleText = this.add.text(1920 / 2, 1080 / 6, 'Main Menu', {
-
-            font: '900 96px Arial',
+            // font: '128px Indie Flower',
+            font: '96px Rock Salt',
+            // font: '900 96px Indie Flower',
             fill: '#fff',
             stroke: '#000',
             strokeThickness: 12,

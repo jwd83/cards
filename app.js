@@ -5,6 +5,27 @@ import GamepadTester from "./scenes/gamepadtester.js";
 import Memory from "./scenes/memory.js";
 import CardInfo from "./scenes/cardinfo.js";
 
+//------------------------------------------------------
+// Beginning of custom font hack
+
+class CustomText extends Phaser.GameObjects.Text {
+    constructor(scene, x, y, text, style) {
+        if (!style) style = {};
+        if (!style.fontFamily) style.fontFamily = "Rock Salt";
+
+
+        super(scene, x, y, text, style);
+    }
+}
+Phaser.GameObjects.Text = CustomText;
+Phaser.GameObjects.GameObjectFactory.remove('text');
+Phaser.GameObjects.GameObjectFactory.register('text', function (x, y, text, style) {
+    return this.displayList.add(new Phaser.GameObjects.Text(this.scene, x, y, text, style));
+});
+
+// End of custom font hack
+//------------------------------------------------------
+
 const config = {
     type: Phaser.AUTO,
     width: 1920,
@@ -25,10 +46,14 @@ const config = {
             debug: false,
         },
     },
-    scene: [Title, GamepadTester, MainMenu, Draft, Memory, CardInfo],
+    scene: [CardInfo, Title, GamepadTester, MainMenu, Draft, Memory],
 };
 
+
 const game = new Phaser.Game(config);
+
+
+
 game._frame_count = 0;
 
 game.events.on("ready", () => {
