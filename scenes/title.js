@@ -104,6 +104,24 @@ class Title extends Phaser.Scene {
         btnGamepadTester.on('pointerout', () => {
             btnGamepadTester.clearTint();
         });
+
+        const btnCardInfo = this.add.image(400, 450, 'button').setInteractive();
+        btnCardInfo.setScale(1);
+        this.add.text(400, 450, 'Card Info', {
+            fontSize: '20px',
+            fill: '#000',
+            stroke: '#fff',
+            strokeThickness: 6,
+        }).setOrigin(0.5);
+        btnCardInfo.on('pointerdown', () => {
+            this.scene.start('CardInfo');
+        });
+        btnCardInfo.on('pointerover', () => {
+            btnCardInfo.setTint(0xcccccc);
+        });
+        btnCardInfo.on('pointerout', () => {
+            btnCardInfo.clearTint();
+        });
     }
 
     preload() {

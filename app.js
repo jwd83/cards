@@ -3,6 +3,7 @@ import MainMenu from "./scenes/mainmenu.js";
 import Draft from "./scenes/draft.js";
 import GamepadTester from "./scenes/gamepadtester.js";
 import Memory from "./scenes/memory.js";
+import CardInfo from "./scenes/cardinfo.js";
 
 const config = {
     type: Phaser.AUTO,
@@ -24,7 +25,7 @@ const config = {
             debug: false,
         },
     },
-    scene: [Title, GamepadTester, MainMenu, Draft, Memory],
+    scene: [Title, GamepadTester, MainMenu, Draft, Memory, CardInfo],
 };
 
 const game = new Phaser.Game(config);
