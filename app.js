@@ -4,6 +4,7 @@ import Draft from "./scenes/draft.js";
 import GamepadTester from "./scenes/gamepadtester.js";
 import Memory from "./scenes/memory.js";
 import CardInfo from "./scenes/cardinfo.js";
+import { KEYS } from "./classes/keys.js";
 
 //------------------------------------------------------
 // Beginning of custom font hack
@@ -52,7 +53,7 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-
+console.log(KEYS.SCENES.TITLE);
 
 game._frame_count = 0;
 
