@@ -18,6 +18,7 @@ class CustomText extends Phaser.GameObjects.Text {
         super(scene, x, y, text, style);
     }
 }
+
 Phaser.GameObjects.Text = CustomText;
 Phaser.GameObjects.GameObjectFactory.remove('text');
 Phaser.GameObjects.GameObjectFactory.register('text', function (x, y, text, style) {
