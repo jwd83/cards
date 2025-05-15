@@ -27,6 +27,15 @@ Phaser.GameObjects.GameObjectFactory.register('text', function (x, y, text, styl
 
 // End of custom font hack
 //------------------------------------------------------
+// Begin of create surface hack
+
+Phaser.Scene.prototype.createSurface = function (width, height) {
+    let rt = this.make.renderTexture({ width, height, add: false });
+    return rt;
+};
+
+// End of create surface hack
+//------------------------------------------------------
 
 const config = {
     type: Phaser.AUTO,
@@ -50,7 +59,6 @@ const config = {
     },
     scene: [Title, CardInfo, GamepadTester, MainMenu, Draft, Memory],
 };
-
 
 const game = new Phaser.Game(config);
 
