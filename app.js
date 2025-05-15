@@ -47,7 +47,7 @@ const config = {
             debug: false,
         },
     },
-    scene: [CardInfo, Title, GamepadTester, MainMenu, Draft, Memory],
+    scene: [Title, CardInfo, GamepadTester, MainMenu, Draft, Memory],
 };
 
 
