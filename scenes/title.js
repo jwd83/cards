@@ -1,4 +1,5 @@
 import Keypad from "../classes/keypad.js";
+import * as C from "../constants.js";
 
 class Title extends Phaser.Scene {
     constructor() {
@@ -14,7 +15,7 @@ class Title extends Phaser.Scene {
         titleImage.setScale(1.1);
 
         this.titleTick = 0;
-        this.titleText = this.add.text(1920 / 2, 1080 / 6, 'Main Menu', {
+        this.titleText = this.add.text(C.RESOLUTION.WIDTH / 2, C.RESOLUTION.HEIGHT / 6, 'Main Menu', {
             // font: '128px Indie Flower',
             font: '96px Rock Salt',
             // font: '900 96px Indie Flower',
@@ -24,9 +25,9 @@ class Title extends Phaser.Scene {
 
         }).setOrigin(0.5);
 
-        const btnToggleFullscreen = this.add.image(1920 - 100, 50, 'button').setInteractive();
+        const btnToggleFullscreen = this.add.image(C.RESOLUTION.WIDTH - 100, 50, 'button').setInteractive();
         btnToggleFullscreen.setScale(0.85);
-        this.add.text(1920 - 100, 50, 'Fullscreen', {
+        this.add.text(C.RESOLUTION.WIDTH - 100, 50, 'Fullscreen', {
             fontSize: '20px',
             fill: '#000',
 

@@ -1,3 +1,6 @@
+import * as C from "../constants.js";
+
+
 class GamepadTester extends Phaser.Scene {
     constructor() {
         super('GamepadTester');
@@ -5,17 +8,17 @@ class GamepadTester extends Phaser.Scene {
 
 
     create() {
-        this.add.text(1920 / 2, 1080 / 10, 'Gamepad Tester', {
+        this.add.text(C.RESOLUTION.WIDTH / 2, C.RESOLUTION.HEIGHT / 10, 'Gamepad Tester', {
             fontSize: '64px',
             fill: '#fff'
         }).setOrigin(0.5);
 
-        this.gamepadText = this.add.text(1920 / 10, 1080 / 10 * 2, 'No gamepad detected', {
+        this.gamepadText = this.add.text(C.RESOLUTION.WIDTH / 10, C.RESOLUTION.HEIGHT / 10 * 2, 'No gamepad detected', {
             fontSize: '32px',
             fill: '#fff'
         }).setOrigin(0);
 
-        this.gamepadText2 = this.add.text(1920 / 10 * 6, 1080 / 10 * 2, '--', {
+        this.gamepadText2 = this.add.text(C.RESOLUTION.WIDTH / 10 * 6, C.RESOLUTION.HEIGHT / 10 * 2, '--', {
             fontSize: '32px',
             fill: '#fff'
         }).setOrigin(0);

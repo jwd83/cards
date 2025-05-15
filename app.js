@@ -4,7 +4,7 @@ import Draft from "./scenes/draft.js";
 import GamepadTester from "./scenes/gamepadtester.js";
 import Memory from "./scenes/memory.js";
 import CardInfo from "./scenes/cardinfo.js";
-import { KEYS } from "./classes/keys.js";
+import * as C from "./constants.js";
 
 //------------------------------------------------------
 // Beginning of custom font hack
@@ -29,8 +29,8 @@ Phaser.GameObjects.GameObjectFactory.register('text', function (x, y, text, styl
 
 const config = {
     type: Phaser.AUTO,
-    width: 1920,
-    height: 1080,
+    width: C.RESOLUTION.WIDTH,
+    height: C.RESOLUTION.HEIGHT,
     loader: {
         baseURL: "assets/",
     },
@@ -53,7 +53,7 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-console.log(KEYS.SCENES.TITLE);
+console.log(`Width x Height: ${C.RESOLUTION.WIDTH} x ${C.RESOLUTION.HEIGHT}`);
 
 game._frame_count = 0;
 
