@@ -25,6 +25,16 @@ class CardInfo extends Phaser.Scene {
         // Draw the blank background
         this.#fireball.draw('blank', 0, 0);
 
+        /*
+
+
+        card window:
+
+        top left is 160, 160
+        bottom right is 1500, 1060
+
+
+        */
 
 
         // Draw the card name
