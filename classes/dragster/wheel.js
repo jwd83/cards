@@ -24,6 +24,14 @@ export default class Wheel {
 
     }
 
+    rpm_to_mph(rpm) {
+
+    }
+
+    mph_to_rpm(mph) {
+
+    }
+
     toString() {
         return `Wheel: ${this.#tire_width_mm}/${this.#aspect_ratio}R${this.#wheel_diameter_in}, Diameter: ${this.#tire_diameter_in.toFixed(2)} in, Circumference: ${this.#tire_circumference_in.toFixed(2)} in`;
     }
