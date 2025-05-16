@@ -12,6 +12,7 @@ export default class Engine {
     }
 
     power(rpm) {
-
+        // convert torque to horsepower with the formula: hp = (torque * rpm) / 5252
+        return this.torque(rpm) * rpm / 5252;
     }
 }
