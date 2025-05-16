@@ -5,7 +5,7 @@ export default class Wheel {
     #aspect_ratio;
     #wheel_diameter_in;
 
-    // Calculated wheel dimensions
+    // Calculated values
     #tire_diameter_in;
     #tire_circumference_in;
     #ratio_rpm_to_mph;
