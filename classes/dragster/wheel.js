@@ -25,11 +25,11 @@ export default class Wheel {
     }
 
     rpm_to_mph(rpm) {
-
+        // TODO
     }
 
     mph_to_rpm(mph) {
-
+        // TODO
     }
 
     toString() {
