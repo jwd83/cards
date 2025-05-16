@@ -1,18 +1,63 @@
 
+
 class CardInfo extends Phaser.Scene {
     #card;
     #fireball;
+    #shadow_bolt;
+
+
     constructor() {
         super('CardInfo');
     }
 
+
+
+    make_card(title, cost, image, text) {
+
+        /*
+
+        this function will create the card rendered as a texture
+
+        */
+
+
+        // blank height and width
+        const bh = this.textures.get('blank').getSourceImage().height;
+        const bw = this.textures.get('blank').getSourceImage().width;
+
+        // var card = this.add.renderTexture(0, 0, bw, bh);
+
+        let card = this.make.renderTexture({ width: bw, height: bh, add: false });
+
+
+
+        // Draw the blank background on top of the fireball image
+        card.draw('blank', 0, 0);
+
+        // add the card to the scene
+        // this.add.existing(card);
+
+        return card;
+
+
+
+
+
+    }
+
+
     preload() {
+
 
         this.load.image('blank', 'images/kayla-blank.png');
         this.load.image('fireball', 'images/fireball.jpg');
+        this.load.image('shadow-bolt', 'images/shadow-bolt.png');
     }
 
     create() {
+
+
+        this.card_shadow_bolt = this.make_card('Shadow Bolt', 2, 'shadow-bolt', 'Deal 10 🌑');
 
         // blank height and width
         const bh = this.textures.get('blank').getSourceImage().height;
@@ -118,11 +163,15 @@ class CardInfo extends Phaser.Scene {
 
 
         this.#fireball.setScale(0.45);
+        this.#shadow_bolt = this.add.existing(this.card_shadow_bolt);
 
 
         // this.#card = this.add.image(0, 0, this.#fireball.texture.key);
         // this.#card.setOrigin(0, 0);
         // this.#card.setScale(0.5);
+
+
+
 
     }
 
