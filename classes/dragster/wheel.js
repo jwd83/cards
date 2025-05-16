@@ -8,6 +8,7 @@ export default class Wheel {
     // Calculated wheel dimensions
     #tire_diameter_in;
     #tire_circumference_in;
+    #ratio_rpm_to_mph;
 
     constructor(tire_width_mm = 335, aspect_ratio = 35, wheel_diameter_in = 17) {
         this.#tire_width_mm = tire_width_mm; // in mm
@@ -22,14 +23,16 @@ export default class Wheel {
         this.#tire_diameter_in = wheel_diameter_in + (2 * tire_sidewall_in); // in inches
         this.#tire_circumference_in = this.#tire_diameter_in * Math.PI; // in inches
 
+        this.#ratio_rpm_to_mph = (this.#tire_circumference_in * 60) / 63360;
+
     }
 
     rpm_to_mph(rpm) {
-        // TODO
+        return (rpm * this.#ratio_rpm_to_mph);
     }
 
     mph_to_rpm(mph) {
-        // TODO
+        return (mph / this.#ratio_rpm_to_mph);
     }
 
     toString() {
