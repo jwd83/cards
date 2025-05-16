@@ -38,4 +38,26 @@ export default class Wheel {
     toString() {
         return `Wheel: ${this.#tire_width_mm}/${this.#aspect_ratio}R${this.#wheel_diameter_in}, Diameter: ${this.#tire_diameter_in.toFixed(2)} in, Circumference: ${this.#tire_circumference_in.toFixed(2)} in`;
     }
+
+    report() {
+        console.log(this.toString());
+        console.log(`Tire Width: ${this.#tire_width_mm} mm`);
+        console.log(`Aspect Ratio: ${this.#aspect_ratio}`);
+        console.log(`Wheel Diameter: ${this.#wheel_diameter_in} in`);
+        console.log(`Tire Diameter: ${this.#tire_diameter_in.toFixed(2)} in`);
+        console.log(`Tire Circumference: ${this.#tire_circumference_in.toFixed(2)} in`);
+        console.log(`RPM to MPH Ratio: ${this.#ratio_rpm_to_mph.toFixed(2)}`);
+
+        for (let i = 0; i <= 200; i += 10) {
+            let mph = i;
+            let rpm = this.mph_to_rpm(mph);
+            console.log(`RPM: ${rpm.toFixed(2)} at ${mph} mph`);
+        }
+
+        for (let i = 0; i <= 2000; i += 100) {
+            let rpm = i;
+            let mph = this.rpm_to_mph(rpm);
+            console.log(`MPH: ${mph.toFixed(2)} at ${rpm} rpm`);
+        }
+    }
 }
