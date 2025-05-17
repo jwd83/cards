@@ -90,6 +90,15 @@ export default class Transmission {
         this.#max_gear = forward_gears.length;
     }
 
+    input_ratio(gear) {
+        return this.#final_drive * this.gear_ratio(gear);
+
+    }
+
+    output_ratio(gear) {
+
+    }
+
     gear_ratio(gear) {
         if (gear == -1) return this.#reverse_gear;
         if (gear == 0) return 0.0;
