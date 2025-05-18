@@ -38,7 +38,7 @@ export default class Transmission {
         return this.#forward_gears[gear - 1];
     }
 
-    max_gear() {
+    max_forward_gear() {
         return this.#max_gear;
     }
 
