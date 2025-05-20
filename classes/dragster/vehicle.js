@@ -1,11 +1,10 @@
-import { Engine } from './engine.js';
-import { Transmission } from './transmission.js';
-import { Wheel } from './wheel.js';
+import Engine from './engine.js';
+import Transmission from './transmission.js';
+import Wheel from './wheel.js';
 
 
-
-AIR_DENSITY = 1.225; //  # kg / m ^ 3
-KG_TO_LBS = 2.20462; // lbs = kg * 2.20462
+const AIR_DENSITY = 1.225; //  # kg / m ^ 3
+const KG_TO_LBS = 2.20462; // lbs = kg * 2.20462
 
 export default class Vehicle {
     #engine;
@@ -41,8 +40,23 @@ export default class Vehicle {
 
     }
 
+    report() {
+        console.log("--- FULL VEHICLE REPORT ---");
+        console.log(`Weight: ${this.#weight_lbs} lbs (${this.#weight_kg} kg)`);
+        console.log(`Drag Coefficient: ${this.#drag_coefficient}`);
+        console.log(`Frontal Area: ${this.#frontal_area_m2} m^2`);
+        console.log(`--- ENGINE REPORT ---`);
+        this.#engine.report();
+        console.log(`--- TRANSMISSION REPORT ---`);
+        this.#transmission.report();
+        console.log(`--- WHEEL REPORT ---`);
+        this.#wheel.report();
+        console.log(`--- END OF VEHICLE REPORT ---`);
+    }
 
 }
 
-v = new Vehicle();
-v.Engine.report();
+const v = new Vehicle();
+v.report();
+// v.Engine = new Engine();
+// v.Engine.report();
