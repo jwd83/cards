@@ -37,8 +37,14 @@ export default class Vehicle {
 
         // set default values
         this.odometer = 0;
+        this.current_gear = 0;
+        this.current_mph = 0;
+        this.current_rpm = 0;
+
 
     }
+
+
 
     report() {
         console.log("--- FULL VEHICLE REPORT ---");
