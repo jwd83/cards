@@ -52,6 +52,11 @@ Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss u
       * Attack
       * Defense
     * Items
+   
+* Equipment Slots
+  * Weapon
+  * Armor
+  * Accessory
 
 * The land of monsters
 
