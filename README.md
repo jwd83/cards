@@ -10,11 +10,19 @@
 
 ### Prologue
 
+## tutorial 
+Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss unlock 3rd starting party member [ifrit/fire] and boss unlocks 4th and final starting party member [asura/healing].
 After their mother, a young adult caller/eidolon mother () is defeated by two adventurous knights on order of a local corrupted king she calls out to her father titan who shows up, sends her through a portal to the land of monsters and sunders the earth from her town through the castle tens of miles a way in an earth quake that shakes the bedrock of the planet and reforms the land where the prior castle had been in an epic cataclysm leaving new mountains behind with almost no creature surviving that eye-witnessed the event.
 
 ### Act 1 - tutorial island
 
-Titan mentoring you. 2 fights with just [titan/earth] then  tutorial mini boss unlock 3rd starting party member [ifrit/fire] and boss unlocks 4th and final starting party member [asura/healing].
+choose your eidolon's to accompany you.
+
+titan, shiva, asura starting set
+
+
+
+## Act 3 - return to land of humans
 
 ### Act 2 - the land of monsters
 
