@@ -3,6 +3,14 @@
 The Hunt for Roy Carnassus II
 
 Title Screen
+Game Mode Screen
+->EZ mode
+->Hard mode
+->Settings
+Game Screen
+Defeat Screen
+Victory Screen
+
 
 
 
